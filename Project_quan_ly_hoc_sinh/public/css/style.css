@@ -1,0 +1,140 @@
+/* FONT & BODY */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f4f6f9; /* Màu nền xám nhạt */
+  color: #333;
+  font-size: 0.9rem;
+  overflow-x: hidden;
+}
+
+/* SIDEBAR (THANH MENU DỌC) */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  color: #ecf0f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+.sidebar-menu::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+.sidebar-menu li {
+  margin-bottom: 5px;
+}
+
+/* Link trong menu */
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: #bdc3c7;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.sidebar-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transform: translateX(3px);
+}
+
+.sidebar-menu a.active {
+  background: #3498db;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+}
+
+.sidebar-menu i {
+  font-size: 1.2rem;
+  margin-right: 12px;
+  width: 25px;
+  text-align: center;
+}
+
+/* Tiêu đề nhóm menu */
+.menu-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #7f8c8d;
+  margin: 15px 0 5px 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* MAIN CONTENT (NỘI DUNG CHÍNH) */
+.main-content {
+  margin-left: 260px; /* Chừa chỗ cho sidebar */
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+/* TOP NAVBAR (THANH TRÊN) */
+.top-navbar {
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* CARD STYLE */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+.card-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 15px 20px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 991px) {
+  .sidebar {
+    margin-left: -260px;
+  }
+  .sidebar.active {
+    margin-left: 0;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
